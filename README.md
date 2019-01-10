@@ -1,3 +1,3 @@
 # crveni-bozuri
 
-http://crvenibozuri.org/
+https://the-winter.github.io/crveni-bozuri/.
