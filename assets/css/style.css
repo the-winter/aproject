@@ -1,289 +1,179 @@
-/*Containers */
-
-.container-fluid {
-
-  margin-bottom: 30px;
-  max-height: 100%;
+html,
+body {
+    font-family: garmond;
+    background-color: #f6eee4;
 }
 
-.page {
+p,
+b,
+a {
+    font-size: 1.1rem;
+}
+
+.container {
     border-style: solid;
     border-width: 15px;
+    background-color: #f6eee4;
     -webkit-border-image: url(../images/border.png) 28 round; /* Safari 3.1-5 */
     -o-border-image: url(../images/border.png) 28 round; /* Opera 11-12.1 */
     border-image: url(../images/border.png) 28 round;
-    max-width: 960px;
-    margin: auto;
-    background-color: #f6eee4;
-    padding: 0px 15px 15px 15px;
-
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
 
-/* Header */
-
-.header-img {
-  width: 100%;
-  height: auto;
+.img-border {
+    border: 10px solid white;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
-.our-logo {
-  max-height:100px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+.my-input {
+    border-radius: none;
+    width: 50%;
 }
 
-.header-text>h1 {
-  font-family: 'IM Fell French Canon SC', serif;
-  font-size:2.5rem;
+.my-input:focus {
+    border-color: none;
+    box-shadow: none;
 }
 
-.header-text>h2 {
-  font-family: 'IM Fell French Canon SC', serif;
-  font-size: 2.1rem;
+.title {
+    font-family: "IM Fell French Canon SC", serif;
 }
 
-.header-text>p.tagline-default {
-  font-family: garmond, times;
-  font-size: larger;
+.tagline {
+    margin-bottom: 0px;
+    margin-left: 130px;
 }
 
-/* Navbar */
-
-.navbar-nav {
-  flex-direction: row;
+.events {
+    margin-top: 20px;
 }
 
-ul {
-    position: relative;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #83020b;
+.events h3 {
+    margin-bottom: 1rem;
 }
 
-.floatright {
-  position: absolute;
-  right: 0;
+.events h5 {
+    margin-bottom: 1rem;
+    text-decoration: underline;
 }
 
-.floatright li {
-  display: inline-block;
+.sister-logo {
+    padding-top: 15px;
+    padding-bottom: 20px;
+    width: 100px;
 }
 
-
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-family: garmond, times;
-    font-size: larger;
-    -o-transition:color .2s ease-out, background 2s ease-in;
-    -ms-transition:color .2s ease-out, background 2s ease-in;
-    -moz-transition:color .2s ease-out, background 2s ease-in;
-    -webkit-transition:color .2s ease-out, background 2s ease-in;
-    /* ...and now for the proper property */
-    transition:color .2s ease-out, background 2s ease-in;
+.cb-dvd img {
+    max-width: 110px;
+}
+.newspaper {
+    width: 250px;
+    margin-left: 15px;
+    margin-bottom: 10px;
 }
 
-
-/* Website content */
-
-.content {
-  margin-top: 30px;
-  padding-bottom:20px;
+.paragraph {
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
-.audio-player audio {min-width: 50%; max-width: 50%;  display: block; }
-
-.audio-player p {
-  margin-top: 1rem;
-  margin-bottom: 0px;
-  max-width: 80%;
-  min-width: 50%;
+#slider {
+    background-color: black;
 }
 
-.events-content {
-  padding-top: 30px;
+.footer-liner {
+    margin-top: 50px;
 }
-
-.events-content > p, .events-content > h2 {
-  color: white;
-}
-
-.upcoming h4 {
-  font-family: garmond, times;
-  text-decoration: underline;
-}
-
-#demo {
-  background-color: black;
-}
-
-.carousel-item img {
-  height:400px;
-  width:auto;
-  margin: auto;
-}
-
-/* Footer */
 
 .footer {
-  margin-top: 20px;
-  padding: 20px 20px 0px 20px;
-  background-color: #83020b;
+    margin-top: 20px;
+    /* padding: 20px 20px 0px 20px; */
+    /* background-color: #83020b; */
+    text-align: center;
 }
 
-.footer p {
-  color: white;
-  text-align: center;
+.registration-warning {
+    color: red;
+    text-align: center;
 }
 
-.designer {
-  max-width: 960px;
-  margin:auto;
+@media screen and (max-width: 419px) {
+    .newspaper {
+        width: 100%;
+        margin-left: 0px;
+    }
 }
 
-.designer-text p {
-  text-align: right;
-  margin: 0px;
-  font-size: smaller;
-}
-
-
-/* Media Queries */
-/* Tablet */
-@media only screen and (min-width: 639px) and (max-width:1025px) {
-  .page {
-    max-width: 750px;
-  }
-
-  p {
-    font-size: larger;
-  }
-
-  .our-logo {
-    max-height: 80px;
-    margin-top: 10px;
-    margin-left: 10px;
-  }
-
-  .header-text>h1 {
-    font-family: 'IM Fell French Canon SC', serif;
-    font-size:2.2rem;
-  }
-
-  .header-text>h2 {
-    font-family: 'IM Fell French Canon SC', serif;
-    font-size: 1.7rem;
-  }
-
-  .header-text>p.tagline-default {
-    font-family: garmond, times;
-  }
-
-  .carousel-item img {
-    max-height:320px;
-    width:auto;
-    margin: auto;
-  }
-
-  .designer {
-    max-width: 750px;
-    margin:auto;
-  }
-}
-
-/* mini tablet */
-@media only screen and (min-width: 639px) and (max-width:800px) {
-  .carousel-item img {
-    max-height:270px;
-    width:auto;
-    margin: auto;
-  }
-
-  .audio-player audio {min-width: 50%; max-width: 100%;  display: block; }
-}
-
-/* Mobile */
-@media screen and (max-width: 638px) {
-  #first {
-        order: 2;
-    }
-
-    #second {
-        order: 1;
-    }
-
-    .page {
-      padding: 0px 10px 10px 10px;
-    }
-
-    .content {
-      margin-top: 20px;
-    }
-
-    .image-row {
-      display: none;
-    }
-
-    .floatright {
-      position:sticky;
-      text-align:right;
-    }
-
-    .header-text>h1 {
-      font-family: 'IM Fell French Canon SC', serif;
-      font-size:1.5rem;
-      text-align: center;
-    }
-
-    .header-text>h2 {
-      font-family: 'IM Fell French Canon SC', serif;
-      font-size: 1.5rem;
-      text-align: center;
-    }
-
-    .header-text>p.tagline-default {
-      font-family: garmond, times;
-      font-size: medium;
-    }
-
-    .events-content {
-      padding-top: 20px;
-    }
-
-    .upcoming {
-      padding-top: 20px;
+/* Mobile Landscape */
+@media only screen and (max-width: 419px) {
+    .tagline {
+        margin-left: 0px;
     }
 
     .carousel-item img {
-      max-height:170px;
-      width:auto;
-      margin: auto;
+        max-height: 150px;
+        width: auto;
+        margin: auto;
+    }
+}
+
+@media only screen and (min-width: 420px) and (max-width: 767px) {
+    .tagline {
+        margin-left: 0px;
     }
 
-    .our-logo {
-      height: 40px;
-      margin-top: 10px;
-      margin-left: 0px;
+    .newspaper {
+        width: 150px;
     }
 
-    .designer-text p {
-      text-align: center;
-      margin: 0px;
-      font-size: small;
+    .carousel-item img {
+        max-height: 250px;
+        width: auto;
+        margin: auto;
     }
- }
 
- /* Mobile Landscape */
- @media only screen and (min-width: 480px) and (max-width:638px) {
-   .carousel-item img {
-     max-height:250px;
-     width:auto;
-     margin: auto;
-   }
- }
+    .set-height {
+        height: 250px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .newspaper {
+        width: 250px;
+    }
+    .carousel-inner > .slider-container > .carousel-item > img {
+        max-height: 350px;
+        width: auto;
+        margin: auto;
+    }
+
+    .set-height {
+        height: 350px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1119px) {
+    .carousel-inner > .slider-container > .carousel-item > img {
+        max-height: 450px;
+        width: auto;
+        margin: auto;
+    }
+
+    .set-height {
+        height: 450px;
+    }
+}
+
+@media only screen and (min-width: 1119px) {
+    .carousel-inner > .slider-container > .carousel-item > img {
+        max-height: 500px;
+        width: auto;
+        margin: auto;
+    }
+
+    .set-height {
+        height: 500px;
+    }
+}
