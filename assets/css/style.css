@@ -43,7 +43,32 @@ a {
 
 .tagline {
     margin-bottom: 0px;
-    margin-left: 130px;
+    margin-left: 0px;
+}
+
+.nav-item {
+    color: #83020b;
+    transition: 0.5s;
+    text-decoration: underline;
+}
+
+.nav-item:hover {
+    color: #272764;
+    text-decoration: none;
+}
+
+.navbar {
+    width: 100%;
+}
+
+.navbar-toggler {
+    color: #83020b;
+    font-weight: bold;
+}
+
+.navbar-toggler:focus {
+    outline: 5px auto transparent;
+    color: #83020b;
 }
 
 .events {
@@ -62,14 +87,41 @@ a {
 .sister-logo {
     padding-top: 15px;
     padding-bottom: 20px;
-    width: 100px;
+    width: 80px;
 }
 
-.cb-dvd img {
-    max-width: 110px;
+#mb-desc {
+    font-size: 0.9em;
 }
+
+#m-b {
+    color: #83020b;
+    transition: 0.5s;
+    text-decoration: underline;
+}
+
+#m-b:hover {
+    color: #272764;
+    text-decoration: none;
+}
+
+.cb-dvd a {
+    color: #83020b;
+    transition: 0.5s;
+    text-decoration: underline;
+}
+
+.cb-dvd a:hover {
+    color: #272764;
+    text-decoration: none;
+}
+
+.cb-dvd a span {
+    font-style: italic;
+}
+
 .newspaper {
-    width: 250px;
+    width: 200px;
     margin-left: 15px;
     /* margin-bottom: 10px; */
 }
@@ -112,6 +164,10 @@ a {
         width: 100%;
         margin-left: 0px;
     }
+
+    #seedbed {
+        height:150px;
+    }
 }
 
 /* Mobile Landscape */
@@ -124,6 +180,10 @@ a {
         max-height: 150px;
         width: auto;
         margin: auto;
+    }
+
+    #seedbed {
+        height:150px;
     }
 }
 
@@ -145,11 +205,15 @@ a {
     .set-height {
         height: 250px;
     }
+
+    #seedbed {
+        height:150px;
+    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .newspaper {
-        width: 250px;
+        width: 200px;
     }
     .carousel-inner > .slider-container > .carousel-item > img {
         max-height: 350px;
@@ -159,6 +223,10 @@ a {
 
     .set-height {
         height: 350px;
+    }
+
+    #seedbed {
+        height:250px;
     }
 }
 
@@ -172,6 +240,10 @@ a {
     .set-height {
         height: 450px;
     }
+
+    #seedbed {
+        height:250px;
+    }
 }
 
 @media only screen and (min-width: 1119px) {
@@ -183,5 +255,9 @@ a {
 
     .set-height {
         height: 500px;
+    }
+
+    #seedbed {
+        height:250px;
     }
 }

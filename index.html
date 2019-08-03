@@ -7,34 +7,31 @@
   <link href="./assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
   <link href="./assets/css/style.css" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC" rel="stylesheet">
+ <script src="./assets/js/peonies.js"></script>
+    
+
 </head>
 
 <body>
-  <div class="container">
-
-    <nav class="navbar navbar-expand-lg row-fluid ">
-      <a class="navbar-brand"><img width="100px" src="./assets/images/logo_transparent.png" /></a>
-      <div class="title">
-        <h1>Српски Хор Црвени Божури</h1>
-        <h2>Serbian Choir Red Peonies</h2>
-      </div>
-      <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon">Menu</span>
-      </button>
-      <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-        <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link" href="./index.html">Home <span class="sr-only"></span></a>
-          <a class="nav-item nav-link" href="./gallery.html" tabindex="-1" aria-disabled="true">Gallery</a>
+  <div class="container" onresize="resizeSeedbox()">
+  <div class="row">
+      <nav class="navbar navbar-expand-lg row-fluid ">
+        <div class="col-sm-3">
+          <a class="navbar-brand"><img width="100px" src="./assets/images/logo_transparent.png" /></a>
         </div>
-      </div>
-
-
-    </nav>
-
+        <div class="col-sm-9">
+          <div class="title">
+            <h1>Српски Хор Црвени Божури</h1>
+            <h2>Serbian Choir Red Peonies</h2>
+          </div>
+        </div>  
+        </nav>
+  </div>
     <hr />
     <div class="row">
-      <div class="col">
+      <div class="col-sm-3">
+      </div>
+      <div class="col-sm-9">
         <p class="tagline" style="margin-bottom: 0px;"><i>Experience the quintessential sounds of Serbia and
             beyond...</i></p>
       </div>
@@ -56,31 +53,30 @@
           <hr />
           <h5>Upcoming</h5>
 
-          <b>Guest Performance</b>
-          <p>13 April</p>
-          <b>Easter Performance</b>
-          <p>28 April</p>
-
-          <b>Choir Bash</b>
-          <p>July</p>
+          <b>Guilford Song Fest</b>
+          <p>14 & 15 September</p>
+          <b>Annual Concert</b>
+          <p>16 November</p>
           <hr />
         </div>
 
 
         <div>
           <h3>Sister Choir</h3>
+          <p id="mb-desc">Crveni Božuri has a sister choir, Musica Balkanica, based in Christchurch, NZ.</p>
           <img class="img-fluid sister-logo" src="./assets/images/logo.png">
-          <p>Crveni Božuri has a sister choir, Musica Balkanica, based in Christchurch, NZ.</p>
-          <p><a href="http://musicabalkanica.org/">musicabalkanica.org</a></p>
+          <p><a id= "m-b" href="http://musicabalkanica.org/">musicabalkanica.org</a></p>
 
         </div>
         <hr />
         <div class="cb-dvd">
-          <h3>Memorabilia</h3>
-          <p>Our DVD</p>
-          <a href="./assets/images/cb_dvd.jpg">
+          <h3> Memorabilia</h3>
+          <p><a href="./assets/images/cb_dvd.jpg">Our DVD</a></p>
+          <!-- <a href="./assets/images/cb_dvd.jpg">
             <img class="img-fluid sister-logo" src="./assets/images/cb_dvd.jpg">
-          </a>
+          </a> -->
+          <p><a href="./assets/images/paper.jpg">Article in <span>Srpski Glas</span></a></p>
+          <p><a href="./gallery.html">Gallery</a></p>
         </div>
       </div>
       <div class="col-sm-9">
@@ -112,12 +108,12 @@
 
         <article class="row single-post mt-5 no-gutters">
           <div class="col">
-            <div class="image-wrapper float-right pr-3">
+            <!-- <div class="image-wrapper float-right pr-3">
               <a href="./assets/images/paper.jpg">
                 <img src="./assets/images/paper.jpg" class="newspaper" alt="">
               </a>
               <p class="source">Чланак y Српском Гласy</p>
-            </div>
+            </div> -->
             <div class="single-post-content-wrapper pr-3">
               <h3>Добродошли</h3>
               <p>Црвени Божури је аматерски а cappella хор из Перта у Западној Аустралији, који првенствено изводи
@@ -135,6 +131,14 @@
           </div>
         </article>
 
+      </div>
+
+      <div id="seedbed" 
+      style="width:100%;top:0px;left:200px;overflow:hidden;position:absolute" 
+      onmousemove="if(seedblower)seedblower(event)" 
+      onmousedown="if(seedgrower)seedgrower(event)" 
+      >
+        <div id="info"></div>
       </div>
 
     </div>
@@ -161,16 +165,25 @@
   </div>
   </div>
   </div>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-    crossorigin="anonymous"></script>
+
 </body>
+<script>
+  // there is no document.onload. only element onload. 
+    document.querySelector("body").onload = function(){
+      resizeSeedbox()
+      blowseeds()
+    }
+    </script>
+<script
+src="https://code.jquery.com/jquery-3.4.1.js"
+integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+  integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+  integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+  crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-61719228-3"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -178,5 +191,6 @@
   gtag('js', new Date());
   gtag('config', 'UA-61719228-3');
 </script>
+
 
 </html>
