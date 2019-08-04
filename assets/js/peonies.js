@@ -4,14 +4,15 @@ var seedframe = 0;
 var seedimg = null;
 var seedhs = { maxscore: 0 };
 var HEIGHT = 250
+var imgWidth = 30;
+var imgHeight = 30;
 
 function preventSelect() {
     return false;
 }
 
 function newseed(x, y) {
-    var imgWidth = 30;
-    var imgHeight = 30;
+
     function choose(items) { return items[Math.floor(Math.random() * items.length)] }
     var imageChoices = ['./assets/images/peony.png', './assets/images/peony1.png', './assets/images/peony3.png']
     if (seedbed == null) {
@@ -53,16 +54,26 @@ function newseed(x, y) {
     return false;
 }
 
-function blowseeds() {
-    // if theres lesss than 30 theres an x chance of creating new ones
-    if (seeds.length < 20 && Math.random() < 0.02 || seeds.length == 0)
-        newseed(100, 50 + Math.random() * 20);
+/** Produces a random number between the inclusive lower and upper bounds */
+function random(a, b) {
+    // lowest number is a, plus difference between number b and a
+    return a + Math.random() * (b - a)
+}
 
-    var maxx = document.body.offsetWidth + 16;
+function blowseeds() {
+    var cbLogo = document.querySelector('.navbar-brand img');
+    var logoDimensions = cbLogo.getBoundingClientRect();
+
+    var verticalStart = random(50, 175); // Math.floor(Math.random() * 175)
+    // console.log(logoDimensions)
+    // if theres lesss than 30 theres an x chance of creating new ones
+    if (seeds.length < 30 && Math.random() < 0.02 || seeds.length == 0)
+        newseed(100, verticalStart);
 
     for (var i = seeds.length - 1; i >= 0; --i) {
         var seed = seeds[i];
-        seed.xloc += (0.5 + seed.xvel) * 0.5;
+        var plusOrMinus = Math.random() < 0.5 ? -1 : 1;
+        seed.xloc += (0.5 + seed.xvel) * 0.6;
         seed.yloc += (seed.yvel) * 0.5;
         seed.style.transform = 'rotate(' + seed.xloc * 5 + 'deg)';
         seed.xvel += seed.xwind * 0.1;
@@ -77,17 +88,19 @@ function blowseeds() {
         // 1% of time we set the wind to strong again
         if (Math.random() < 0.01) {
             seed.xwind = 3 * Math.random();
-            seed.ywind = Math.random();
-            // This code is meant to make it drift towards the middle
-            if (seed.yloc + 20 * seed.scale > HEIGHT)
-                seed.ywind = -seed.ywind;
+            seed.ywind = Math.random() * plusOrMinus;
+            // // If the middle of the seed if greater than the height make it drift down instead
+            // if (seed.yloc > HEIGHT - seed.scale * imgHeight / 2)
+            //     seed.ywind = -seed.ywind //* Math.random();
         };
 
         seed.style.left = Math.round(seed.xloc) + 'px';
         seed.style.top = Math.round(seed.yloc) + 'px';
 
         // removes seeds out of bounds
-        if (seed.xloc > maxx || seed.xloc < -50 || seed.yloc < -50 || seed.yloc > HEIGHT) {
+        // TODO wat?
+        var maxx = seedbed.getBoundingClientRect().width + imgWidth / 2;
+        if (seed.xloc > maxx || seed.xloc < -imgWidth || seed.yloc < -imgHeight || seed.yloc > HEIGHT) {
             seedbed.removeChild(seed);
             seeds.splice(i, 1); // remove element i
         }
@@ -154,9 +167,10 @@ function resizeSeedbox() {
     var element = document.querySelector('.container')
     var rect = element.getBoundingClientRect();
     var seedbed = document.getElementById('seedbed')
-    seedbed.style["top"] = rect.top
-    seedbed.style["left"] = rect.left + 'px'
-    seedbed.style["width"] = rect.width + 'px'
+    var borderWidth = 10
+    seedbed.style["top"] = rect.top + borderWidth / 2 + 'px';
+    seedbed.style["left"] = rect.left + borderWidth / 2 + 'px'
+    seedbed.style["width"] = rect.width - borderWidth + 'px'
     console.log('resizeSeedbox')
     // seedbed.style["height"] = rect.height + 'px'
 }
