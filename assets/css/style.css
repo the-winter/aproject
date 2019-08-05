@@ -1,7 +1,7 @@
 html,
 body {
     font-family: garmond, "Times New Roman", Times, Serif;
-    background-color: #f6eee4;
+    background-color: #ebebe396;
 }
 
 p,
@@ -13,7 +13,7 @@ a {
 .container {
     border-style: solid;
     border-width: 15px;
-    background-color: #f6eee4;
+    /* background-color: #ebebe396; */
     -webkit-border-image: url(../images/border.png) 28 round; /* Safari 3.1-5 */
     -o-border-image: url(../images/border.png) 28 round; /* Opera 11-12.1 */
     border-image: url(../images/border.png) 28 round;
