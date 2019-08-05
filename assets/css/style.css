@@ -21,6 +21,21 @@ a {
     margin-bottom: 30px;
 }
 
+hr:first-of-type {
+    border-top: 1px dotted black;
+    margin-top: 0rem;
+}
+
+#title-separator {
+    border-top: 1px solid black;
+    /* margin-top: 2rem; */
+}
+
+.sidebar hr {
+    border-top: 1px dotted #c6c6c6;
+    /* width: 60%; */
+}
+
 .img-border {
     border: 10px solid white;
     margin-top: 20px;
@@ -59,6 +74,7 @@ a {
 
 .navbar {
     width: 100%;
+    padding: 10px 20px 10px 20px;
 }
 
 .navbar-toggler {
@@ -242,7 +258,7 @@ a {
     }
 
     #seedbed {
-        height:250px;
+        height:220px;
     }
 }
 
@@ -258,6 +274,6 @@ a {
     }
 
     #seedbed {
-        height:250px;
+        height:220px;
     }
 }
