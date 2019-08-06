@@ -33,7 +33,6 @@ hr:first-of-type {
 
 .sidebar hr {
     border-top: 1px dotted #c6c6c6;
-    /* width: 60%; */
 }
 
 .img-border {
@@ -52,7 +51,7 @@ hr:first-of-type {
     box-shadow: none;
 }
 
-.title {
+.title, .sidebar h3 {
     font-family: "IM Fell French Canon SC", serif;
 }
 
