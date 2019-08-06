@@ -10,7 +10,7 @@ a {
     font-size: 1.1rem;
 }
 
-.container {
+.main {
     border-style: solid;
     border-width: 15px;
     background-color: #f6f6f2;
@@ -18,7 +18,7 @@ a {
     -o-border-image: url(../images/border.png) 28 round; /* Opera 11-12.1 */
     border-image: url(../images/border.png) 28 round;
     margin-top: 10px;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
 }
 
 hr:first-of-type {
@@ -104,6 +104,12 @@ hr:first-of-type {
     padding-bottom: 20px;
     width: 80px;
 }
+.side-icon {
+    width: 15px;
+    float: left;
+    margin-top: 10px;
+    margin-right: 2px;
+}
 
 #mb-desc {
     font-size: 0.9em;
@@ -133,6 +139,16 @@ hr:first-of-type {
 
 .cb-dvd a span {
     font-style: italic;
+}
+
+.freepic {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 0.5rem;
+}
+
+.freepic a {
+    font-size: 0.7rem;  
 }
 
 .newspaper {

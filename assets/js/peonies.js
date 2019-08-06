@@ -170,8 +170,8 @@ function resizeSeedbox() {
     seedbed.style["top"] = rect.top + borderWidth / 2 + 'px';
     seedbed.style["left"] = rect.left + borderWidth / 2 + 'px'
     seedbed.style["width"] = rect.width - borderWidth + 'px'
-    console.log('resizeSeedbox')
+    // console.log('resizeSeedbox')
     // seedbed.style["height"] = rect.height + 'px'
 }
-window.onresize = resizeSeedbox
+// window.onresize = resizeSeedbox
 // window.onload = resizeSeedbox
