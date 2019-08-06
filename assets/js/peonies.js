@@ -63,9 +63,8 @@ function random(a, b) {
 function blowseeds() {
     var cbLogo = document.querySelector('.navbar-brand img');
     var logoDimensions = cbLogo.getBoundingClientRect();
-
-    var verticalStart = random(50, 175); // Math.floor(Math.random() * 175)
-    // console.log(logoDimensions)
+    // peonies generated inside the height of the logo
+    var verticalStart = random(40, 100);
     // if theres lesss than 30 theres an x chance of creating new ones
     if (seeds.length < 30 && Math.random() < 0.02 || seeds.length == 0)
         newseed(100, verticalStart);
