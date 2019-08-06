@@ -163,13 +163,18 @@ function seedgrower(e) {
 function resizeSeedbox() {
     // so run this on window resize and onload
     // TODO maybe
-    // var element = document.querySelector('.container')
-    // var rect = element.getBoundingClientRect();
+    var element = document.querySelector('.container')
+    var rect = element.getBoundingClientRect();
     var seedbed = document.getElementById('seedbed')
     var borderWidth = 10
-    seedbed.style["top"] = 10 + borderWidth / 2 + 'px'; // 10 is rect.top
-    seedbed.style["left"] = 105.5 + borderWidth / 2 + 'px' // 105.5 is rect.left
-    seedbed.style["width"] = 1140 - borderWidth + 'px' // 1140 is rect.width
+
+    var top = rect.top;
+    var left = rect.left;
+    var width = rect.width;
+
+    seedbed.style["top"] = top + borderWidth / 2 + 'px'; // 10 is rect.top
+    seedbed.style["left"] = left + borderWidth / 2 + 'px' // 105.5 is rect.left
+    seedbed.style["width"] = width - borderWidth + 'px' // 1140 is rect.width
     // console.log('resizeSeedbox')
     // seedbed.style["height"] = rect.height + 'px'
 }
