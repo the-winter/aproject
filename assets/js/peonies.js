@@ -173,5 +173,5 @@ function resizeSeedbox() {
     // console.log('resizeSeedbox')
     // seedbed.style["height"] = rect.height + 'px'
 }
-// window.onresize = resizeSeedbox
+window.onresize = resizeSeedbox
 // window.onload = resizeSeedbox
