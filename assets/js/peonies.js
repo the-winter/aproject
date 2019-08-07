@@ -197,8 +197,16 @@ function debounce(fn, delay) {
     };
 }
 
-var is_safari = navigator.userAgent.indexOf("Safari") > -1;
-if (is_safari) { alert('Your browser may not support all features of this site'); }
+var chrome = navigator.userAgent.indexOf('Chrome') > -1;
+var explorer = navigator.userAgent.indexOf('MSIE') > -1;
+var firefox = navigator.userAgent.indexOf('Firefox') > -1;
+var safari = navigator.userAgent.indexOf("Safari") > -1;
+var camino = navigator.userAgent.indexOf("Camino") > -1;
+var opera = navigator.userAgent.toLowerCase().indexOf("op") > -1;
+if ((chrome) && (safari)) safari = false;
+if ((chrome) && (opera)) chrome = false;
+
+if (safari) { alert('Your browser may not support all features of this site'); }
 
 window.onresize = resizeSeedbox()
 window.addEventListener('scroll', debounce(resizeSeedbox, 100), false);
