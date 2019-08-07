@@ -182,7 +182,7 @@ function resizeSeedbox() {
     console.log("offset: ", offset);
 
 
-    seedbed.style["top"] = (top - offset) + borderWidth / 2 + 'px'; // 10 is rect.top
+    seedbed.style["top"] = (top + offset) + borderWidth / 2 + 'px'; // 10 is rect.top
     seedbed.style["left"] = left + borderWidth / 2 + 'px' // 105.5 is rect.left
     seedbed.style["width"] = width - borderWidth + 'px' // 1140 is rect.width
     // console.log('resizeSeedbox')
