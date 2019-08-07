@@ -13,6 +13,7 @@
 </head>
 
 <body>
+  <p id="warn" style="display:none;">Your browser may not support all features of this website.</p>
   <div class="container main" onresize="resizeSeedbox()">
   <div class="row">
       <nav class="navbar navbar-expand-lg row-fluid ">
@@ -180,6 +181,21 @@ crossorigin="anonymous"></script>
   crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-61719228-3"></script>
 <script>
+  var chrome = navigator.userAgent.indexOf('Chrome') > -1;
+  var explorer = navigator.userAgent.indexOf('MSIE') > -1;
+  var firefox = navigator.userAgent.indexOf('Firefox') > -1;
+  var safari = navigator.userAgent.indexOf("Safari") > -1;
+  var camino = navigator.userAgent.indexOf("Camino") > -1;
+  var opera = navigator.userAgent.toLowerCase().indexOf("op") > -1;
+  if ((chrome) && (safari)) safari = false;
+  if ((chrome) && (opera)) chrome = false;
+
+  var warn = document.getElementById('warn');
+
+if (safari) { 
+  warn.style.display = 'block';
+} 
+
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
