@@ -173,22 +173,22 @@ function getPageMaxScroll() {
 }
 
 
-function resizeSeedbox() {
+function resizeSeedbox(e) {
     // so run this on window resize and onload
     // TODO maybe
 
-    var windowTop = 1000000; // Value larger than maximum scroll
-    var maxScroll = getPageMaxScroll();
+    // var windowTop = 1000000; // Value larger than maximum scroll
+    // var maxScroll = getPageMaxScroll();
 
-    // Fix for bug on iOS devices
-    // When top was larger than maximum page scroll
-    // "getBoundingClientRect" would take that value into calculations
-    if (windowTop > maxScroll) {
-        windowTop = maxScroll;
-    }
+    // // Fix for bug on iOS devices
+    // // When top was larger than maximum page scroll
+    // // "getBoundingClientRect" would take that value into calculations
+    // if (windowTop > maxScroll) {
+    //     windowTop = maxScroll;
+    // }
 
-    // Scroll the window to the new position
-    window.scrollTo(0, windowTop);
+    // // Scroll the window to the new position
+    // window.scrollTo(0, windowTop);
 
     var element = document.querySelector('.container')
     var rect = element.getBoundingClientRect();
@@ -207,11 +207,24 @@ function resizeSeedbox() {
     console.log("offset: ", offset);
 
 
-    seedbed.style["top"] = (top + offset) + borderWidth / 2 + 'px'; // 10 is rect.top
+    seedbed.style["top"] = top + borderWidth / 2 + 'px'; // 10 is rect.top
     seedbed.style["left"] = left + borderWidth / 2 + 'px' // 105.5 is rect.left
     seedbed.style["width"] = width - borderWidth + 'px' // 1140 is rect.width
     // console.log('resizeSeedbox')
     // seedbed.style["height"] = rect.height + 'px'
 }
+
+function debounce(fn, delay) {
+    var timer = null;
+    return function () {
+        var context = this, args = arguments;
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+            fn.apply(context, args);
+        }, delay);
+    };
+}
+
 window.onresize = resizeSeedbox()
+window.addEventListener('scroll', debounce(resizeSeedbox, 100), false);
 // window.onload = resizeSeedbox
