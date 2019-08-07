@@ -198,7 +198,7 @@ function debounce(fn, delay) {
 }
 
 var is_safari = navigator.userAgent.indexOf("Safari") > -1;
-if (is_safari) { alert('Safari browsers may not support all features of this site'); }
+if (is_safari) { alert('Your browser may not support all features of this site'); }
 
 window.onresize = resizeSeedbox()
 window.addEventListener('scroll', debounce(resizeSeedbox, 100), false);
