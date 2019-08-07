@@ -161,10 +161,35 @@ function seedgrower(e) {
     return false;
 }
 
+function getPageMaxScroll() {
+    // Cross browser page height detection is ugly
+    return Math.max(
+        document.body.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.clientHeight,
+        document.documentElement.scrollHeight,
+        document.documentElement.offsetHeight
+    ) - window.innerHeight; // Subtract viewport height
+}
+
 
 function resizeSeedbox() {
     // so run this on window resize and onload
     // TODO maybe
+
+    var windowTop = 1000000; // Value larger than maximum scroll
+    var maxScroll = getPageMaxScroll();
+
+    // Fix for bug on iOS devices
+    // When top was larger than maximum page scroll
+    // "getBoundingClientRect" would take that value into calculations
+    if (windowTop > maxScroll) {
+        windowTop = maxScroll;
+    }
+
+    // Scroll the window to the new position
+    window.scrollTo(0, windowTop);
+
     var element = document.querySelector('.container')
     var rect = element.getBoundingClientRect();
     var seedbed = document.getElementById('seedbed')
