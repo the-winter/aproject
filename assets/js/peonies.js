@@ -162,7 +162,7 @@ function seedgrower(e) {
 }
 
 function resizeSeedbox(e) {
-    var element = document.querySelector('.container')
+    var element = document.querySelector('.main')
     var rect = element.getBoundingClientRect();
     var seedbed = document.getElementById('seedbed')
     var borderWidth = 10
