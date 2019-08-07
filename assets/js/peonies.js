@@ -117,10 +117,10 @@ function seedblower(e) {
         posx = e.pageX;
         posy = e.pageY;
     }
-    else if (e.clientX || e.clientY) {
-        posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
-        posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
-    }
+    // else if (e.clientX || e.clientY) {
+    //     posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+    //     posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+    // }
 
     for (var i = 0; i < seeds.length; ++i) {
         var seed = seeds[i];
@@ -143,10 +143,10 @@ function seedgrower(e) {
         posx = e.pageX;
         posy = e.pageY;
     }
-    else if (e.clientX || e.clientY) {
-        posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
-        posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
-    }
+    // else if (e.clientX || e.clientY) {
+    //     posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+    //     posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+    // }
     // the seeds are position:absolute which relative to parent. If we want a parent that doesn't start at (0,0)...
     // 1. get position of parent
     var element = document.getElementById('seedbed');
@@ -160,6 +160,8 @@ function seedgrower(e) {
     if (e.stopPropagation) e.stopPropagation();
     return false;
 }
+
+
 function resizeSeedbox() {
     // so run this on window resize and onload
     // TODO maybe
@@ -167,7 +169,6 @@ function resizeSeedbox() {
     var rect = element.getBoundingClientRect();
     var seedbed = document.getElementById('seedbed')
     var borderWidth = 10
-
     var top = rect.top;
     var left = rect.left;
     var width = rect.width;
@@ -177,8 +178,8 @@ function resizeSeedbox() {
         offset = elemRect.top - bodyRect.top;
 
     console.log('Element is ' + offset + ' vertical pixels from <body>');
-    console.log(top)
-    console.log(bodyRect.top);
+    console.log("rect.top: ", top)
+    console.log("offset: ", offset);
 
 
     seedbed.style["top"] = (top - offset) + borderWidth / 2 + 'px'; // 10 is rect.top
@@ -187,5 +188,5 @@ function resizeSeedbox() {
     // console.log('resizeSeedbox')
     // seedbed.style["height"] = rect.height + 'px'
 }
-window.onresize = resizeSeedbox
+window.onresize = resizeSeedbox()
 // window.onload = resizeSeedbox
